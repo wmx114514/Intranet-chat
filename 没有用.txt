@@ -1,0 +1,13 @@
+chat-room-pro/
+├── app.py                # Flask + SocketIO 后端（登录、注册、私聊、记录、管理）
+├── awa.txt               # 用户数据（账号、密码、昵称、头像、好友、禁言状态）
+├── msg_history.txt       # 消息记录（群聊 + 私聊）
+├── requirements.txt      # 依赖
+├── static/
+│   ├── index.html        # 登录页
+│   ├── register.html     # 注册页
+│   ├── chat.html         # 主聊天室（群聊 + 好友私聊）
+│   ├── style.css
+│   ├── script.js
+│   └── uploads/          # 头像文件夹（自动创建）
+└── README.md
