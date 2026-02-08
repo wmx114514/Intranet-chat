@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>聊天室</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+  <div class="chat-wrap">
+    <div class="sidebar">
+      <h3>我的信息</h3>
+      <img id="avatar" src="uploads/default.png" width="50"><br>
+      <input type="file" id="avatarFile" accept="image/*">
+      <button onclick="uploadAvatar()">更换头像</button>
+      <p id="nick"></p>
+      <hr>
+      <h3>好友列表</h3>
+      <div id="friendList"></div>
+      <input id="addFriend" placeholder="用户名">
+      <button onclick="addFriend()">添加好友</button>
+      <hr>
+      <div id="adminPanel" style="display:none;">
+        <h3>管理员面板</h3>
+        <input id="muteUser" placeholder="用户名">
+        <button onclick="muteUser(1)">禁言</button>
+        <button onclick="muteUser(0)">解禁</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="tab">
+        <button onclick="showTab('group')">群聊</button>
+        <button onclick="showTab('private')">私聊</button>
+      </div>
+      <div id="groupBox" class="msg-box"></div>
+      <div id="privateBox" class="msg-box" style="display:none;"></div>
+      <div class="input-bar">
+        <input id="msgInput" placeholder="输入消息...">
+        <button onclick="sendMsg()">发送</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
